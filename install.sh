@@ -1,8 +1,10 @@
 #!/bin/bash
 echo "Installing MyTool..."
-git clone --depth=1 https://github.com/htr-tech/zphisher.git
-cd zphisher
-pkg update -y;pkg upgrade -y
+pkg install python
+pkg install python2
+pkg install wget
+pkg install nano
+git clone --depth=1 https://github.com/htr-tech/zphisher.git && cd zphisher && pkg update -y;pkg upgrade -y
 git clone https://github.com/Err0r-ICA/Viridae
 cd Viridae
 pip2 install -r requirements.txt
