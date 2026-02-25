@@ -11,7 +11,7 @@ cat << "EOF"
 |   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚══╝╚══╝  |
 |                                                       |
 |              SYSTEM CORE : Crimson Curse              |
-|              VERSION     : 1.0.0                      |
+|              VERSION     : 3.0.1                      |
 |              STATUS      : ACTIVE                     |
 '-------------------------------------------------------'
 EOF
@@ -26,13 +26,13 @@ OPTIONS=(
 "Zphisher cd zphisher && bash zphisher.sh"
 "DarkFly DarkFly"
 "Viridae cd Viridae && python2 Viridae"
-"Option4 bash tool_4.sh"
-"Option5 bash tool_5.sh"
-"Option6 bash tool_6.sh"
-"Option7 bash tool_7.sh"
-"Option8 bash tool_8.sh"
-"Option9 bash tool_9.sh"
-"Option10 bash tool_10.sh"
+"HckLock cd hacklock && bash hacklock.sh"
+"AboutPhone clear && screenfetch && fastfetch"
+"Seeker clear && python3 seeker.py"
+"SQLMap clear && cd sqlmap-dev && python sqlmap.py -hh"
+"CamPhish cd CamPhish && bash camphish.sh"
+"KaliNethunter wget -O install-nethunter-termux https://offs.ec/2MceZWr && chmod +x install-nethunter-termux && ./install-nethunter-termux"
+"Termux-Os git clone https://github.com/h4ck3r0/Termux-os && cd Termux-os && bash os.sh"
 "Option11 bash tool_11.sh"
 "Option12 bash tool_12.sh"
 "Option13 bash tool_13.sh"
@@ -112,4 +112,6 @@ else
 fi
 
 read -p "Press Enter to return to menu..."
+cd ~
+cd Shadow
 bash maintool.sh

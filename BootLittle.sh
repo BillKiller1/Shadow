@@ -14,59 +14,42 @@ cat << "EOF"
 |              VERSION     : 3.0.1                      |
 |              STATUS      : installing                 |
 '-------------------------------------------------------'
-Little = only 10 tools (2GB)
-Small  = only 20 tools (minutes)
-Mid    = only 30 tools (minutes)
-Large  = only 40 tools (minutes)
-Full   = fully 50 tools(minutes)
---------------------------------/
 EOF
 echo -e "\e[0m"
+#Tool Installing Part
+echo "Installing MyTool..."
+pkg install python
+pkg install python2
+pkg install python3
+pkg install wget
+pkg install nano
+pip install lolcat
+pkg install fastfetch
+pkg install screenfetch
+git clone https://github.com/noob-hackers/hacklock
+cd $HOME
+cd Shadow
+cd hacklock
+bash setup
+git clone --depth=1 https://github.com/htr-tech/zphisher.git && cd zphisher
+git clone https://github.com/Err0r-ICA/Viridae
+cd Viridae
+pip2 install -r requirements.txt
+git clone https://github.com/Ranginang67/DarkFly-Tool
+cd DarkFly-Tool
+python2 install.py
+cd
+cd Shadow
+git clone https://github.com/thewhiteh4t/seeker.git
+cd seeker/
+chmod +x install.sh
+./install.sh
+cd
+cd Shadow
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+cd
+cd Shadow
+git clone https://github.com/techchipnet/CamPhish
+cd
 
-# ----------------------
-# MENU OPTIONS (easy edit)
-# ----------------------
-# Format: "OptionName ScriptToRun"
-# Replace script names with your own bash scripts
-OPTIONS=(
-"Little bash BootLittle.sh"
-"Small bash BootSmall.sh"
-"Mid bash BootMid.sh"
-"Large bash BootLarge.sh"
-"Full bash BootFull.sh"
-)
-# ----------------------
-cols=5
-count=1
-
-for i in "${!OPTIONS[@]}"; do
-    name=$(echo "${OPTIONS[$i]}" | cut -d' ' -f1)
-    printf "%-15s" "$count) $name"
-    ((count++))
-    if (( (i+1) % cols == 0 )); then
-        echo ""
-    fi
-done
-echo ""
-echo "0) Exit"
-
-# ----------------------
-# GET USER CHOICE
-# ----------------------
-read -p "Choose an option: " choice
-
-if [ "$choice" == "0" ]; then
-    echo "Exiting..."
-    exit 0
-fi
-
-index=$((choice-1))
-if [ $index -ge 0 ] && [ $index -lt ${#OPTIONS[@]} ]; then
-    cmd=$(echo "${OPTIONS[$index]}" | cut -d' ' -f2-)
-    echo "Running $cmd..."
-    eval "$cmd"
-else
-    echo "Invalid choice!"
-fi
-
-read -p "Press Enter to return..."
+echo "Installation complete! Run it with bash maintool.sh"
